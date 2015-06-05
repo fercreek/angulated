@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="angulated">
+
 <head>
   <meta charset="UTF-8">
   <title>Angulated</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body ng-controller="appController">
   <h1>Angulated</h1>
+
+  <table>
+    <tr>
+      <th>Dia</th>
+      <th>Entregas de proveedor</th>
+      <th>Inventario inicial</th>
+      <th>Demanda</th>
+      <th>Ventas</th>
+      <th>Inventario final</th>
+      <th>Costo de ordenar</th>
+      <th>Costo de llevar inventario</th>
+      <th>Costo faltante</th>
+      <th>Costo total</th>
+      <th>Costo promedio</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td><input type="number" name="myDecimal" ng-model="provider" ng-change="changeValue()" /></td>
+      <td>{{ provider }}</td>
+      <td>{{ demand }}</td>
+      <td>{{ sales }}</td>
+      <td>{{ finalnventory }}</td>
+      <td>{{ costOfOrder }}</td>
+      <td>{{ carryingCost }}</td>
+      <td>{{ missingCost }}</td>
+      <td>{{ totalCost }}</td>
+      <td>{{ averageCost }}</td>
+
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>shutt</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0</td>
+      <td>shutt</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0</td>
+      <td>shutt</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0</td>
+      <td>shutt</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>0</td>
+      <td>shutt</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>0</td>
+      <td>shutt</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td></td>
+      <td>shutt</td>
+    </tr>
+
+  </table>
 
   <script src="app.js" charset="utf-8"></script>
   <script src="appController.js" charset="utf-8"></script>
