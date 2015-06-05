@@ -26,7 +26,6 @@ function appController($scope){
       for (i = 0; i <= 7; i++) {
           demandArr.push($scope.demandFn());
       }
-      console.log(demandArr);
       return demandArr;
     };
 
@@ -38,54 +37,91 @@ function appController($scope){
         return (-100 * Math.log(1-Math.random()));
     };
 
-    $scope.salesFn = function(demand, invet){
-        if (invet === undefined){
-            if ($scope.demand > $scope.provider){
+    $scope.salesFn = function(demand, invent){
+        if (invent === undefined){
+            if ($scope.demand < $scope.provider){
                 return $scope.demand;
             } else {
                 return $scope.provider;
             }
         } else {
-            if (demand > invet){
+            if (demand < invent){
                 return demand;
             } else {
-                return invet;
+                return invent;
+            }
+        }
+    };
+
+    $scope.finalnventoryFn = function(demand, invent, day){
+        if (invent === undefined){
+            var result = $scope.provider - $scope.demand;
+            if (result <= 0){
+                return 0;
+            } else {
+                return result;
+            }
+        } else{
+            var result = invent - demand;
+            if (Math.abs(result) <= 0){
+                result =  0;
+            } else {
+                result =  Math.abs(result) ;
+            }
+            //HACK
+            $scope.finalnventoryArr.push(result);
+            return result;
+        }
+
+    };
+
+    $scope.costOfOrderFn = function(day){
+        if (day === undefined){
+            if ($scope.day[0] % 7 === 0){
+              return 1000;
+            } else {
+              return 0;
+            }
+        } else {
+            if (day % 7 === 0){
+              return 1000;
+            } else {
+              return 0;
             }
         }
 
     };
 
-    $scope.finalnventoryFn = function(){
-        var result = $scope.provider - $scope.demand;
-        if (result <= 0){
-            return 0;
+    $scope.carryingCostFn = function(initInv, finalinv){
+        if (initInv === undefined){
+          return (1 * ($scope.provider + $scope.finalnventory) / 2 );
         } else {
-            return result;
+          return (1 * (initInv + finalinv) / 2 );
         }
     };
 
-    $scope.costOfOrderFn = function(){
-        if ($scope.day[0] % 7 === 0){
-          return 1000;
+    $scope.missingCostFn = function(invent, demand){
+        if (demand === undefined){
+            if ($scope.provider <= $scope.demand){
+              return (6 * ($scope.demand - $scope.provider ) );
+            } else {
+              return 0;
+            }
         } else {
-          return 0;
+            if (invent <= demand){
+              return (6 * (demand - invent ) );
+            } else {
+              return 0;
+            }
         }
     };
 
-    $scope.carryingCostFn = function(){
-        return (1 * ($scope.provider + $scope.finalnventory) / 2 );
-    };
-
-    $scope.missingCostFn = function(){
-        if ($scope.provider <= $scope.demand){
-          return (6 * ($scope.demand - $scope.provider ) );
-        } else {
-          return 0;
-        }
-    };
-
-    $scope.totalCostFn = function(){
+    $scope.totalCostFn = function(order, carrying, missing){
+      if (order === undefined){
         return $scope.costOfOrder + $scope.carryingCost + $scope.missingCost;
+      } else {
+        return order + carrying + missing;
+      }
     };
 
     $scope.averageCostFn = function(){

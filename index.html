@@ -45,11 +45,11 @@
       <td>{{ finalnventoryArr[1] }}</td>
       <td>{{ demandArr[1] }}</td>
       <td>{{ salesFn(demandArr[1], finalnventoryArr[1]) }}</td>
-      <td><p>:D </p></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{ finalnventoryFn(finalnventoryArr[1], demandArr[1], 1) }}</td>
+      <td>{{ costOfOrderFn(day[1]) }}</td>
+      <td>{{ carryingCostFn(finalnventoryArr[1], finalnventoryArr[2]) }}</td>
+      <td>{{ missingCostFn(finalnventoryArr[1], demandArr[1] ) }}</td>
+      <td>{{ totalCostFn(costOfOrderFn(day[1]), carryingCostFn(finalnventoryArr[1], finalnventoryArr[2]), missingCostFn(finalnventoryArr[1], demandArr[1] )) }}</td>
       <td></td>
 
     </tr>
@@ -58,13 +58,12 @@
       <td>0</td>
       <td>{{ finalnventoryArr[2] }}</td>
       <td>{{ demandArr[2]  }}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{ salesFn(demandArr[2], finalnventoryArr[2]) }}</td>
+      <td>{{ finalnventoryFn(finalnventoryArr[2], demandArr[2], 2) }}</td>
+      <td>{{ costOfOrderFn(day[2]) }}</td>
+      <td>{{ carryingCostFn(finalnventoryArr[2], finalnventoryArr[3]) }}</td>
+      <td>{{ missingCostFn(finalnventoryArr[2], demandArr[2] ) }}</td>
+      <td>{{ totalCostFn(costOfOrderFn(day[2]), carryingCostFn(finalnventoryArr[2], finalnventoryArr[3]), missingCostFn(finalnventoryArr[2], demandArr[2] )) }}</td>
 
     </tr>
     <tr>
@@ -72,13 +71,12 @@
       <td>0</td>
       <td>{{ finalnventoryArr[3] }}</td>
       <td>{{ demandArr[3] }}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{ salesFn(demandArr[3], finalnventoryArr[3]) }}</td>
+      <td>{{ finalnventoryFn(finalnventoryArr[3], demandArr[3], 3) }}</td>
+      <td>{{ costOfOrderFn(day[3]) }}</td>
+      <td>{{ carryingCostFn(finalnventoryArr[3], finalnventoryArr[4]) }}</td>
+      <td>{{ missingCostFn(finalnventoryArr[3], demandArr[3] ) }}</td>
+      <td>{{ totalCostFn(costOfOrderFn(day[3]), carryingCostFn(finalnventoryArr[3], finalnventoryArr[4]), missingCostFn(finalnventoryArr[3], demandArr[3] )) }}</td>
 
     </tr>
     <tr>
@@ -86,13 +84,12 @@
       <td>0</td>
       <td>{{ finalnventoryArr[4] }}</td>
       <td>{{ demandArr[4] }}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{ salesFn(demandArr[4], finalnventoryArr[4]) }}</td>
+      <td>{{ finalnventoryFn(finalnventoryArr[4], demandArr[4], 4) }}</td>
+      <td>{{ costOfOrderFn(day[4]) }}</td>
+      <td>{{ carryingCostFn(finalnventoryArr[4], finalnventoryArr[5]) }}</td>
+      <td>{{ missingCostFn(finalnventoryArr[4], demandArr[4] ) }}</td>
+      <td>{{ totalCostFn(costOfOrderFn(day[4]), carryingCostFn(finalnventoryArr[4], finalnventoryArr[5]), missingCostFn(finalnventoryArr[4], demandArr[4] )) }}</td>
 
     </tr>
     <tr>
@@ -100,13 +97,12 @@
       <td>0</td>
       <td>{{ finalnventoryArr[5] }}</td>
       <td>{{ demandArr[5] }}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{ salesFn(demandArr[5], finalnventoryArr[5]) }}</td>
+      <td>{{ finalnventoryFn(finalnventoryArr[5], demandArr[5], 5) }}</td>
+      <td>{{ costOfOrderFn(day[5]) }}</td>
+      <td>{{ carryingCostFn(finalnventoryArr[5], finalnventoryArr[6]) }}</td>
+      <td>{{ missingCostFn(finalnventoryArr[5], demandArr[5] ) }}</td>
+      <td>{{ totalCostFn(costOfOrderFn(day[5]), carryingCostFn(finalnventoryArr[5], finalnventoryArr[6]), missingCostFn(finalnventoryArr[5], demandArr[5] )) }}</td>
 
     </tr>
     <tr>
@@ -114,29 +110,27 @@
       <td>0</td>
       <td>{{ finalnventoryArr[6] }}</td>
       <td>{{ demandArr[6] }}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{ salesFn(demandArr[6], finalnventoryArr[6]) }}</td>
+      <td>{{ finalnventoryFn(finalnventoryArr[6], demandArr[6], 6) }}</td>
+      <td>{{ costOfOrderFn(day[6]) }}</td>
+      <td>{{ carryingCostFn(finalnventoryArr[6], finalnventoryArr[7]) }}</td>
+      <td>{{ missingCostFn(finalnventoryArr[6], demandArr[6] ) }}</td>
+      <td>{{ totalCostFn(costOfOrderFn(day[6]), carryingCostFn(finalnventoryArr[6], finalnventoryArr[7]), missingCostFn(finalnventoryArr[6], demandArr[6] )) }}</td>
 
     </tr>
-    <tr>
+    <!-- <tr>
+      <td>{{ day[7] }}</td>
       <td>{{ day[7] }}</td>
       <td>{{ finalnventoryArr[7] }}</td>
       <td>{{ demandArr[7] }}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{ salesFn(demandArr[7], finalnventoryArr[7]) }}</td>
+      <td>{{ finalnventoryFn(finalnventoryArr[7], demandArr[7], 7) }}</td>
+      <td>{{ costOfOrderFn(day[7]) }}</td>
+      <td>{{ carryingCostFn(finalnventoryArr[7], finalnventoryArr[8]) }}</td>
+      <td>{{ missingCostFn(finalnventoryArr[7], demandArr[7] ) }}</td>
+      <td>{{ totalCostFn(costOfOrderFn(day[7]), carryingCostFn(finalnventoryArr[7], finalnventoryArr[8]), missingCostFn(finalnventoryArr[7], demandArr[7] )) }}</td>
 
-    </tr>
+    </tr> -->
 
   </table>
 
