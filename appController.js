@@ -6,6 +6,7 @@ function appController($scope){
     $scope.day = [0,1,2,3,4,5,6,7];
 
     $scope.changeValue = function(){
+        // $scope.provider = $scope.providerFn();
         $scope.demand = $scope.demandFn();
         $scope.sales = $scope.salesFn();
         $scope.finalnventory = $scope.finalnventoryFn();
@@ -14,18 +15,44 @@ function appController($scope){
         $scope.missingCost = $scope.missingCostFn();
         $scope.totalCost = $scope.totalCostFn();
         $scope.averageCost = $scope.averageCostFn();
+        $scope.demandArr = $scope.demandArrFn();
+        $scope.finalnventoryArr = [
+          0, $scope.finalnventory
+        ];
+    };
+
+    $scope.demandArrFn = function(){
+      var demandArr = [];
+      for (i = 0; i <= 7; i++) {
+          demandArr.push($scope.demandFn());
+      }
+      console.log(demandArr);
+      return demandArr;
+    };
+
+    $scope.providerFn = function(){
+        // return
     };
 
     $scope.demandFn = function(){
         return (-100 * Math.log(1-Math.random()));
     };
 
-    $scope.salesFn = function(){
-        if ($scope.demand > $scope.provider){
-            return $scope.demand;
+    $scope.salesFn = function(demand, invet){
+        if (invet === undefined){
+            if ($scope.demand > $scope.provider){
+                return $scope.demand;
+            } else {
+                return $scope.provider;
+            }
         } else {
-            return $scope.provider;
+            if (demand > invet){
+                return demand;
+            } else {
+                return invet;
+            }
         }
+
     };
 
     $scope.finalnventoryFn = function(){
